@@ -1,0 +1,71 @@
+{
+  "1": {
+    "title": "Tacos",
+    "ingredients": {
+      "tomato": 2,
+      "lemon": 3,
+      "potato": 1,
+      "rice": 1,
+      "ketchup": 2,
+      "lettuce": 5,
+      "onion": 1,
+      "cheese": 4,
+      "meat": 2,
+      "chicken": 2
+    }
+  },
+  "2": {
+    "title": "Carne de Res Saltada",
+    "ingredients": {
+      "tomato": 1,
+      "lemon": 1,
+      "potato": 3,
+      "rice": 1,
+      "lettuce": 1,
+      "onion": 1,
+      "meat": 1
+    }
+  },
+  "3": {
+    "title": "Arroz Encebollado con Ensalada de Papas y Carne",
+    "ingredients": {
+      "tomato": 2,
+      "potato": 3,
+      "rice": 1,
+      "ketchup": 2,
+      "onion": 3,
+      "meat": 1
+    }
+  },
+  "4": {
+    "title": "Muslos de Pollo",
+    "ingredients": {
+      "tomato": 1,
+      "lemon": 3,
+      "potato": 1,
+      "rice": 1,
+      "ketchup": 1,
+      "lettuce": 1,
+      "chicken": 4
+    }
+  },
+  "5": {
+    "title": "Pastel de Cerdo con Pollo",
+    "ingredients": {
+      "tomato": 2,
+      "rice": 3,
+      "onion": 1,
+      "chicken": 2
+    }
+  },
+  "6": {
+    "title": "Papa Rellena",
+    "ingredients": {
+      "tomato": 1,
+      "potato": 5,
+      "rice": 2,
+      "onion": 1,
+      "chicken": 2
+    }
+  }
+}
