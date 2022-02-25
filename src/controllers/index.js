@@ -14,9 +14,15 @@ const { STORE_BASE_URL } = process.env;
  */
 
 const manageRequests = async (req, res) => {
-  const database = db.JSON();
+  const { recipes: database } = db.JSON();
 
-  const order = {};
+  // Status puede ser "delivered" o "pending"
+  const order = {
+    title: "",
+    ingredients: {},
+    status: "pending",
+    date: new Date().toLocaleString(),
+  };
   const random = Math.floor(Math.random() * Object.keys(database).length) + 1;
 
   order.title = database[random].title;
@@ -27,8 +33,14 @@ const manageRequests = async (req, res) => {
       ingredients: order.ingredients,
     });
 
-    JSON.stringify(storeIngredients) === JSON.stringify(order.ingredients) &&
+    if (
+      JSON.stringify(storeIngredients) === JSON.stringify(order.ingredients)
+    ) {
+      order.status = "delivered";
+      db.set("ordersHistory", [...db.get("ordersHistory"), order]);
+      db.sync();
       res.json(order);
+    }
   } catch (error) {
     console.error(error);
   }
