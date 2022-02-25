@@ -1,99 +1,202 @@
 {
-  "recipes": {
-    "1": {
-      "title": "Tacos",
-      "ingredients": {
-        "tomato": 2,
-        "lemon": 3,
-        "potato": 1,
-        "rice": 1,
-        "ketchup": 2,
-        "lettuce": 5,
-        "onion": 1,
-        "cheese": 4,
-        "meat": 2,
-        "chicken": 2
-      }
+    "recipes": {
+        "1": {
+            "title": "Tacos",
+            "ingredients": {
+                "tomato": 2,
+                "lemon": 3,
+                "potato": 1,
+                "rice": 1,
+                "ketchup": 2,
+                "lettuce": 5,
+                "onion": 1,
+                "cheese": 4,
+                "meat": 2,
+                "chicken": 2
+            }
+        },
+        "2": {
+            "title": "Carne de Res Saltada",
+            "ingredients": {
+                "tomato": 1,
+                "lemon": 1,
+                "potato": 3,
+                "rice": 1,
+                "lettuce": 1,
+                "onion": 1,
+                "meat": 1
+            }
+        },
+        "3": {
+            "title": "Arroz Encebollado con Ensalada de Papas y Carne",
+            "ingredients": {
+                "tomato": 2,
+                "potato": 3,
+                "rice": 1,
+                "ketchup": 2,
+                "onion": 3,
+                "meat": 1
+            }
+        },
+        "4": {
+            "title": "Muslos de Pollo",
+            "ingredients": {
+                "tomato": 1,
+                "lemon": 3,
+                "potato": 1,
+                "rice": 1,
+                "ketchup": 1,
+                "lettuce": 1,
+                "chicken": 4
+            }
+        },
+        "5": {
+            "title": "Pastel de Cerdo con Pollo",
+            "ingredients": {
+                "tomato": 2,
+                "rice": 3,
+                "onion": 1,
+                "chicken": 2
+            }
+        },
+        "6": {
+            "title": "Papa Rellena",
+            "ingredients": {
+                "tomato": 1,
+                "potato": 5,
+                "rice": 2,
+                "onion": 1,
+                "chicken": 2
+            }
+        }
     },
-    "2": {
-      "title": "Carne de Res Saltada",
-      "ingredients": {
-        "tomato": 1,
-        "lemon": 1,
-        "potato": 3,
-        "rice": 1,
-        "lettuce": 1,
-        "onion": 1,
-        "meat": 1
-      }
-    },
-    "3": {
-      "title": "Arroz Encebollado con Ensalada de Papas y Carne",
-      "ingredients": {
-        "tomato": 2,
-        "potato": 3,
-        "rice": 1,
-        "ketchup": 2,
-        "onion": 3,
-        "meat": 1
-      }
-    },
-    "4": {
-      "title": "Muslos de Pollo",
-      "ingredients": {
-        "tomato": 1,
-        "lemon": 3,
-        "potato": 1,
-        "rice": 1,
-        "ketchup": 1,
-        "lettuce": 1,
-        "chicken": 4
-      }
-    },
-    "5": {
-      "title": "Pastel de Cerdo con Pollo",
-      "ingredients": {
-        "tomato": 2,
-        "rice": 3,
-        "onion": 1,
-        "chicken": 2
-      }
-    },
-    "6": {
-      "title": "Papa Rellena",
-      "ingredients": {
-        "tomato": 1,
-        "potato": 5,
-        "rice": 2,
-        "onion": 1,
-        "chicken": 2
-      }
-    }
-  },
-  "ordersHistory": [
-    {
-      "title": "Arroz Encebollado con Ensalada de Papas y Carne",
-      "ingredients": {
-        "tomato": 2,
-        "potato": 3,
-        "rice": 1,
-        "ketchup": 2,
-        "onion": 3,
-        "meat": 1
-      },
-      "status": "delivered",
-      "date": "25/2/2022 0:04:47"
-    },
-    {
-      "title": "Pastel de Cerdo con Pollo",
-      "ingredients": {
-        "tomato": 2,
-        "rice": 3,
-        "onion": 1,
-        "chicken": 2
-      },
-      "status": "delivered",
-      "date": "25/2/2022 0:05:04"
-    }
-  ]
+    "ordersHistory": [
+        {
+            "id": "6b621539-7364-4614-b043-20b011097223",
+            "title": "Tacos",
+            "ingredients": {
+                "tomato": 2,
+                "lemon": 3,
+                "potato": 1,
+                "rice": 1,
+                "ketchup": 2,
+                "lettuce": 5,
+                "onion": 1,
+                "cheese": 4,
+                "meat": 2,
+                "chicken": 2
+            },
+            "status": "delivered",
+            "date": "25/2/2022 1:30:17"
+        },
+        {
+            "id": "065a700a-6e8a-4e88-b9bb-68f0eaa1cb69",
+            "title": "Pastel de Cerdo con Pollo",
+            "ingredients": {
+                "tomato": 2,
+                "rice": 3,
+                "onion": 1,
+                "chicken": 2
+            },
+            "status": "delivered",
+            "date": "25/2/2022 1:30:36"
+        },
+        {
+            "id": "91a64223-b929-4d5f-b031-f3507b55f357",
+            "title": "Pastel de Cerdo con Pollo",
+            "ingredients": {
+                "tomato": 2,
+                "rice": 3,
+                "onion": 1,
+                "chicken": 2
+            },
+            "status": "delivered",
+            "date": "25/2/2022 1:30:39"
+        },
+        {
+            "id": "643793be-f113-4cdc-9145-06b4ea35ee74",
+            "title": "Carne de Res Saltada",
+            "ingredients": {
+                "tomato": 1,
+                "lemon": 1,
+                "potato": 3,
+                "rice": 1,
+                "lettuce": 1,
+                "onion": 1,
+                "meat": 1
+            },
+            "status": "delivered",
+            "date": "25/2/2022 1:33:56"
+        },
+        {
+            "id": "538e4fea-00f4-48b5-a776-51181112f4f6",
+            "title": "Pastel de Cerdo con Pollo",
+            "ingredients": {
+                "tomato": 2,
+                "rice": 3,
+                "onion": 1,
+                "chicken": 2
+            },
+            "status": "delivered",
+            "date": "25/2/2022 1:37:31"
+        },
+        {
+            "id": "0f376e48-f5bc-4a84-97d9-b337cc28ad9d",
+            "title": "Pastel de Cerdo con Pollo",
+            "ingredients": {
+                "tomato": 2,
+                "rice": 3,
+                "onion": 1,
+                "chicken": 2
+            },
+            "status": "delivered",
+            "date": "25/2/2022 1:37:35"
+        },
+        {
+            "id": "20225067-c991-43da-989d-0902b9d71af5",
+            "title": "Tacos",
+            "ingredients": {
+                "tomato": 2,
+                "lemon": 3,
+                "potato": 1,
+                "rice": 1,
+                "ketchup": 2,
+                "lettuce": 5,
+                "onion": 1,
+                "cheese": 4,
+                "meat": 2,
+                "chicken": 2
+            },
+            "status": "delivered",
+            "date": "25/2/2022 1:37:40"
+        },
+        {
+            "id": "ce7a379e-ec88-46fc-8cd6-6277a6e2102a",
+            "title": "Papa Rellena",
+            "ingredients": {
+                "tomato": 1,
+                "potato": 5,
+                "rice": 2,
+                "onion": 1,
+                "chicken": 2
+            },
+            "status": "delivered",
+            "date": "25/2/2022 1:37:46"
+        },
+        {
+            "id": "41f3dcb7-9aed-4489-a8e8-3640d03fe442",
+            "title": "Carne de Res Saltada",
+            "ingredients": {
+                "tomato": 1,
+                "lemon": 1,
+                "potato": 3,
+                "rice": 1,
+                "lettuce": 1,
+                "onion": 1,
+                "meat": 1
+            },
+            "status": "delivered",
+            "date": "25/2/2022 1:37:51"
+        }
+    ]
 }

@@ -2,6 +2,7 @@ const JSONdb = require("simple-json-db");
 const db = new JSONdb("./database.json");
 const axios = require("axios");
 require("dotenv").config();
+const { v4: uuidv4 } = require("uuid");
 
 const { STORE_BASE_URL } = process.env;
 
@@ -18,6 +19,7 @@ const manageRequests = async (req, res) => {
 
   // Status puede ser "delivered" o "pending"
   const order = {
+    id: uuidv4(),
     title: "",
     ingredients: {},
     status: "pending",
