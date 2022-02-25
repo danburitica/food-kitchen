@@ -25,7 +25,7 @@ const manageRequests = async (req, res) => {
     status: "pending",
     date: new Date().toLocaleString(),
   };
-  const random = Math.floor(Math.random() * Object.keys(database).length) + 1;
+  const random = Math.floor(Math.random() * Object.keys(database).length);
 
   order.title = database[random].title;
   order.ingredients = database[random].ingredients;
@@ -44,7 +44,7 @@ const manageRequests = async (req, res) => {
       res.json(order);
     }
   } catch (error) {
-    console.error(error);
+    res.json({ order, message: error });
   }
 };
 
