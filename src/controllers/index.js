@@ -49,19 +49,22 @@ const manageRequests = async (req, res) => {
 };
 
 /**
- * Método auxiliar.
- * Pendiente por probar, si no es necesario, se borra.
+ * Método encargado de retornar las recetas o el historial de la base de datos.
  */
 
-/* const getRecipe = async (orderIngredients) => {
-  try {
-    const { data } = await axios.post(STORE_BASE_URL, orderIngredients);
-    return data;
-  } catch (error) {
-    console.error(error);
-  }
-}; */
+const getKitchen = (req, res) => {
+  const key = req.query.key;
+
+  res.json(
+    key === "recipes"
+      ? db.get("recipes")
+      : key === "history"
+      ? db.get("ordersHistory")
+      : { message: "No matches" }
+  );
+};
 
 module.exports = {
   manageRequests,
+  getKitchen,
 };
