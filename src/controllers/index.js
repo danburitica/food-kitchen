@@ -4,7 +4,8 @@ const axios = require("axios");
 require("dotenv").config();
 const { v4: uuidv4 } = require("uuid");
 
-const { STORE_BASE_URL } = process.env;
+const store_base_url =
+  process.env.STORE_BASE_URL || "http://localhost:3001/api/store";
 
 /**
  * Éste endpoint es accedido desde la interfáz gráfica a través de un botón.
@@ -31,7 +32,7 @@ const manageRequests = async (req, res) => {
   order.ingredients = database[random].ingredients;
 
   try {
-    const { data: storeIngredients } = await axios.post(STORE_BASE_URL, {
+    const { data: storeIngredients } = await axios.post(store_base_url, {
       ingredients: order.ingredients,
     });
 
@@ -44,7 +45,7 @@ const manageRequests = async (req, res) => {
       res.json(order);
     }
   } catch (error) {
-    res.json({ order, message: error });
+    res.json({ message: error });
   }
 };
 
