@@ -1,8 +1,7 @@
-const JSONdb = require("simple-json-db");
-const db = new JSONdb("./database.json");
 const axios = require("axios");
 require("dotenv").config();
-const { v4: uuidv4 } = require("uuid");
+const recipeSchema = require("../models/recipe");
+const orderHistorySchema = require("../models/orderHistory");
 
 const store_base_url =
   process.env.STORE_BASE_URL || "http://localhost:3001/api/store";
@@ -16,32 +15,30 @@ const store_base_url =
  */
 
 const manageRequests = async (req, res) => {
-  const { recipes: database } = db.JSON();
+  const recipes = await recipeSchema.find();
 
   // Status puede ser "delivered" o "pending"
   const order = {
-    id: uuidv4(),
+    id: Date.now(),
     title: "",
-    ingredients: {},
+    ingredients: [],
     status: "pending",
     date: new Date().toLocaleString(),
   };
-  const random = Math.floor(Math.random() * Object.keys(database).length);
+  const random = Math.floor(Math.random() * recipes.length);
 
-  order.title = database[random].title;
-  order.ingredients = database[random].ingredients;
+  order.title = recipes[random].title;
+  order.ingredients = recipes[random].ingredients;
 
   try {
     const { data: storeIngredients } = await axios.post(store_base_url, {
       ingredients: order.ingredients,
     });
-
-    if (
-      JSON.stringify(storeIngredients) === JSON.stringify(order.ingredients)
-    ) {
+    if (storeIngredients) {
       order.status = "delivered";
-      db.set("ordersHistory", [...db.get("ordersHistory"), order]);
-      db.sync();
+      const newOrderHistory = new orderHistorySchema(order);
+      await newOrderHistory.save();
+
       res.json(order);
     }
   } catch (error) {
@@ -53,16 +50,17 @@ const manageRequests = async (req, res) => {
  * Método encargado de retornar las recetas o el historial de la base de datos.
  */
 
-const getKitchen = (req, res) => {
+const getKitchen = async (req, res) => {
   const key = req.query.key;
-
-  res.json(
-    key === "recipes"
-      ? db.get("recipes")
-      : key === "history"
-      ? db.get("ordersHistory")
-      : { message: "No matches" }
-  );
+  if (key === "recipes") {
+    const recipes = await recipeSchema.find();
+    res.json(recipes);
+  } else if (key === "history") {
+    const history = await orderHistorySchema.find();
+    res.json(history);
+  } else {
+    res.json({ message: "No matches" });
+  }
 };
 
 module.exports = {
